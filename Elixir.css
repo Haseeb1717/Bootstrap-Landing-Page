@@ -1,0 +1,304 @@
+:root {
+  --c-dark: #212529;
+  --c-brand: #4e57d4;
+  --c-brand-light: #6970dd;
+  --c-brand-rgb: 78, 87, 212;
+  --c-body: #727272;
+  --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.8);
+  --transition: all 0.5s ease;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: var(--c-brand);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--c-brand-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section, .padding {
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+.theme-shadow{
+  box-shadow: var(--box-shadow);
+}
+
+
+.img-zoom{
+  position: relative;
+  overflow: hidden;
+
+}
+.image-zoom-wrapped{
+  position: relative;
+  overflow: hidden;
+
+}
+.image-zoom-wrapped img {
+  transition: transform 0.3s ease; /* transition property, duration, timing function */
+}
+
+.img-zoom:hover .image-zoom-wrapped img {
+  transform: scale(1.1); /* Apply scale transformation on hover */
+}
+
+.navbar{
+  box-shadow: var(--box-shadow);
+}
+.logo {
+  width: 80px; /* Increase width */
+  height: 60px; /* Increase height */
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: var(--c-dark);
+
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--c-brand);
+}
+.btn {
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+border-radius: 0;
+padding: 10px 24px;
+}
+.btn-brand{
+  background-color:var(--c-brand);
+  color: #fff;
+}
+
+.btn-brand:hover{
+  background-color: var(--c-brand-light);
+  border-color: var(--c-brand-light);
+  color: #fff;
+}
+#hero {
+  background: linear-gradient(rgba(78, 87, 212, 0.507), rgba(78, 87, 212, 0.507), rgba(0, 0, 0, 0.438)), url('nature2.jfif');
+  background-position: center;
+  background-size: cover;
+}
+.section-title {
+  margin-bottom: 40px;
+}
+
+.section-title .line {
+  width: 60px;
+  height: 4px;
+  background-color: var(--c-brand);
+  margin: 16px auto 24px auto;
+}
+
+.section-title .p {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto; /* Note: 'max-resolution' property is not widely supported */
+  color: black;
+}
+
+.iconbox {
+  height: 70px;
+  width: 70px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--c-brand-rgb), 0.2);
+  color: var(--c-brand);
+  font-size: 34px;
+  flex: none;
+}
+
+.services {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.services::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  background: rgba(var(--c-brand-rgb), 0.2);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: transform 0.3s ease; /* transition property, duration, timing function */
+
+}
+
+.services:hover {
+  width: 100%;
+  height: 100%;
+  background-color: var(--c-brand);
+  z-index: -1;
+}
+
+.services:hover h5,
+.services:hover p {
+  color: #fff;
+}
+
+.services:hover .iconbox {
+  color: #fff;
+  background-color: #727272;
+}
+#counter {
+  margin-top: 100px;
+  background: linear-gradient(rgba(78, 87, 212, 0.507), rgba(78, 87, 212, 0.507), rgba(0, 0, 0, 0.438)), url('nature2.jfif');
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  padding: 20px;
+  height: 200px; /* Added padding */
+}
+
+@media screen and (min-width: 160px) and (max-width: 991px) {
+  #counter{
+    height: auto;
+  }
+}
+
+.portfolio-item {
+  position: relative;
+}
+
+.portfolio-item .iconbox {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.portfolio-item:hover .iconbox {
+  display: block;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.2); /* Zoom in effect on hover */
+}
+.review small {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--c-brand); /* Assuming you have defined a custom color variable */
+}
+.review-head {
+  position: relative;
+}
+.review-head::after {
+  content: '';
+  width: 28px;
+  height: 28px;
+  background-color: #fff; /* Change this line to set the desired background color */
+  position: absolute;
+  bottom: -14px;
+  transform: rotate(45deg);
+}
+.team-member-content {
+  background-color: var(--c-brand);
+  position: absolute;
+  bottom: -30px;
+  left: 5%;
+  width: calc(100% - 50px);
+  padding: auto;
+  transform: translateY(-50%);
+transition: var(--transition);
+opacity:0;
+}
+.team-member:hover .team-member-content {
+opacity: 1;
+bottom: -20px;
+}
+.team-memberimges{
+  width: auto;
+  height: 350px;
+}
+#contact {
+  position: relative;
+  z-index: 2;
+}
+#contact::after {
+  content: "";
+  width: 100%;
+  height: 70vh; /* Changed to 70vh for better responsiveness */
+  background: linear-gradient(rgba(78, 87, 212, 0.507), rgba(78, 87, 212, 0.507), rgba(0, 0, 0, 0.438)), url('nature2.jfif');
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  position: absolute; /* Added position absolute */
+}
+
+
+#contact .form-control{
+  border-radius: 0;
+}
+#contact .form-control:focus{
+  box-shadow: none;
+  border-color: var(--c-brand);
+}
+
+#footer {
+  padding: 120px; /* Top and bottom padding */
+
+}
+.footer-top {
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8); /* corrected opacity value */
+
+}
+.footer-bottom {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.footer-text {
+  color: rgba(255, 255, 255, 0.2);
+}
+footer li {
+  list-style: none;
+  padding: 0;
+}
+footer .line {
+  width: 40px;
+  height: 4px;
+  background-color: var(--c-brand); /* assuming you define --c-brand somewhere else */
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+.social-icons {
+  width: 40px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  margin: 5px; /* Added for spacing between icons */
+}
+
+.social-icons:hover {
+  background-color:var(--c-brand); /* Change to the color you desire */
+}
